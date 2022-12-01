@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab:wght@300;600&display=swap');
+
+/* EVERYTHING IS REALLY UNORGANIZED BUT NEXT PROJECTS WILL BE */ 
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Bebas Neue', cursive;
+  text-shadow: 6px 5px 8px black;
+}
+
+h4 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 25px;
+}
+
+ul, ol {
+  font-family: 'Roboto Slab', serif;
+}
+
+/* Navigation */
+#nav {
+  width: 100%;
+  background-color: black;
+  padding-bottom: 6vh;
+}
+
+#nav a {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3vh;
+  text-decoration: none;
+  padding-right: 1rem;
+  color: white;
+  text-align:center;
+}
+
+/* Banner */
+#banner {
+  position: relative;
+  background-image: none; /* url(https://images.unsplash.com/photo-1615837197154-2e801f4bd294?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80); */
+  width: 100%;
+  height: 45vh;
+  background-position: center center;
+  background-size: cover;
+}
+
+#banner h1 {
+  font-size: 80px;
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#banner h4 {
+  font-size: 200%;
+  position: absolute; 
+  color: white;
+  top: 60%;
+  left: 35.9%;
+  text-shadow: 6px 5px 8px black;
+}
+
+/* Navigation and Banner */
+
+#recipeColumns {
+  padding: 1vw 0 2vw 2vw;
+  position: relative;
+  width: 85%;
+  height: 50vh;
+  display: block;
+}
+
+#recipeColumns div {
+  display: inline-block;
+  float: left;
+  position: relative;
+}
+
+#recipeColumns div#ingredients {
+  width: 30%;
+}
+
+#recipeColumns div#equipment {
+  width: 30%;
+}
+
+#recipeColumns div#directions {
+  width: 30%;
+}
+
+#recipeColumns #ingredients.tpShow ul,
+#recipeColumns #equipment.tpShow ul,
+#recipeColumns #directions.tpShow ol{
+  display: block;
+}
+
+  {
+  box-sizing: border-box;
+}
+
+/* Footer */
+#footer {
+  font-family: 'Roboto Slab', serif;
+  font-size: 2vh;
+  background-color: Black;
+  color: white;
+  padding: 1rem;
+}
