@@ -4,13 +4,13 @@
 
 function loadFileInto(fromFile, whereTo) {
 
-	// creating a new XMLHttpRequest object
+	// creates new XMLHttpRequest object
 	ajax = new XMLHttpRequest();
 
-	// defines the GET/POST method, source, and async value of the AJAX object
+	// Defines the method, source, and async value of objec
 	ajax.open("GET", fromFile, true);
 
-	// provides code to do something in response to the AJAX request
+	// gives code to __ in response to ajax request
 	ajax.onreadystatechange = function() {
 			if ((this.readyState == 4) && (this.status == 200)) {
 				document.querySelector(whereTo).innerHTML = this.responseText;
@@ -19,20 +19,19 @@ function loadFileInto(fromFile, whereTo) {
 				console.log("Error: " + this.responseText);
 			}
 		
-	} // end ajax.onreadystatechange function
-
-	// initiate request and wait for response
+	}
+  
 	ajax.send();
 
 }
 
-function Recipe(recipeName, contributorName, imageURL, ingredientsURL, equipmentURL, directionsURL) {
+function Recipe(recipeName, contributorName, imageURL, ingredientsURL, descriptionURL, directionsURL) {
   
   this.recipeName = recipeName;
   this.contributor = contributorName;
   this.imageURL = imageURL;
   this.ingredients = ingredientsURL;
-  this.equipment = equipmentURL;
+  this.description = descriptionURL;
   this.directions = directionsURL;
   
   this.displayRecipe = function() {
@@ -40,8 +39,8 @@ function Recipe(recipeName, contributorName, imageURL, ingredientsURL, equipment
     document.querySelector("#banner h1").innerHTML = this.recipeName;
     document.querySelector("#contribution").innerHTML = this.contributor;
     document.querySelector("#banner").style.backgroundImage = "url(" + this.imageURL +")";
-   loadFileInto(this.ingredients, "#ingredients ul");
-    loadFileInto(this.equipment, "#equipment ul");
+    loadFileInto(this.ingredients, "#ingredients ul");
+    loadFileInto(this.description, "#description ul");
     loadFileInto(this.directions, "#directions ol");
   }
   
@@ -50,12 +49,12 @@ function Recipe(recipeName, contributorName, imageURL, ingredientsURL, equipment
 
 // For loading new recipes
 redvelvet = new Recipe(
-  "Red Velvet Cupcakes",
-  "Chris", 
-  "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=951&q=80", 
-  "ingredients.html", 
-  "equipment.html", 
-  "directions.html"
+  "Chicken Katsu",
+  "Recipe by: sakuraiiko @Allrecipes.com", 
+  "https://images.unsplash.com/photo-1591814252471-068b545dff62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", 
+  "Jrecipes/ingredients.html", 
+  "Jrecipes/description.html", 
+  "Jrecipes/directions.html"
 );
 
 // When window first loads / clicking functions
